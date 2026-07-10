@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080711" />
+    <title>TYPE SLAYER — The keyboard is your weapon.</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main id="app-shell" aria-label="TYPE SLAYER game arena">
+      <div id="game-container"></div>
+      <div class="vignette" aria-hidden="true"></div>
+      <div class="corner-brand" aria-hidden="true">
+        <span class="brand-kicker">ARCANE SURVIVAL</span>
+        <span class="brand-name">TYPE SLAYER</span>
+      </div>
+      <div class="milestone-note" aria-hidden="true">ARENA CALIBRATING <span></span></div>
+    </main>
+    <noscript>TYPE SLAYER needs JavaScript enabled.</noscript>
+
+    <!-- Phaser is loaded from a stable public CDN; no art assets are required. -->
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.90.0/dist/phaser.min.js"></script>
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>

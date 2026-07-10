@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=DM+Mono:wght@400;500&display=swap');
+
+:root {
+  color-scheme: dark;
+  background: #080711;
+  font-family: 'DM Mono', ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 45%, #17132b 0%, #080711 56%, #030308 100%);
+}
+
+#app-shell {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#game-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+#game-container canvas {
+  display: block;
+}
+
+.vignette {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  box-shadow: inset 0 0 13vw 3vw rgba(0, 0, 0, .58);
+}
+
+.corner-brand, .milestone-note {
+  position: absolute;
+  z-index: 4;
+  pointer-events: none;
+  text-shadow: 0 0 14px rgba(172, 106, 255, .55);
+}
+
+.corner-brand {
+  top: clamp(18px, 3.4vw, 46px);
+  left: clamp(18px, 4.8vw, 78px);
+  display: grid;
+  gap: 4px;
+}
+
+.brand-kicker {
+  color: #af9acb;
+  font-size: clamp(8px, .72vw, 12px);
+  letter-spacing: .28em;
+}
+
+.brand-name {
+  color: #f1eafd;
+  font-family: Cinzel, Georgia, serif;
+  font-size: clamp(17px, 1.8vw, 29px);
+  font-weight: 800;
+  letter-spacing: .1em;
+}
+
+.milestone-note {
+  right: clamp(18px, 4.8vw, 78px);
+  bottom: clamp(18px, 3.4vw, 46px);
+  color: #a79ab7;
+  font-size: clamp(8px, .68vw, 11px);
+  letter-spacing: .15em;
+}
+
+.milestone-note span {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-left: 8px;
+  border-radius: 50%;
+  background: #8bf3dc;
+  box-shadow: 0 0 9px #8bf3dc;
+  animation: pulse 1.35s ease-in-out infinite;
+}
+
+@keyframes pulse { 50% { opacity: .2; transform: scale(.65); } }
+
+@media (max-width: 600px) {
+  .corner-brand { top: 17px; left: 18px; }
+  .milestone-note { display: none; }
+  .vignette { box-shadow: inset 0 0 18vw 2vw rgba(0, 0, 0, .52); }
+}
